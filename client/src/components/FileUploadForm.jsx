@@ -35,8 +35,8 @@ export default function FileUploadForm({
           onClick={() => switchPanel('upload')}
           className={`px-4 py-2 rounded ${
             activePanel === 'upload'
-              ? 'bg-blue-600 text-white'
-              : 'bg-blue-200 text-white'
+              ? 'bg-blue-600 text-white hover:bg-blue-700'
+              : 'bg-blue-200 text-blue-800 hover:bg-blue-300'
           }`}
         >
           Cargar Archivo
@@ -46,8 +46,8 @@ export default function FileUploadForm({
           onClick={() => switchPanel('scan')}
           className={`px-4 py-2 rounded ${
             activePanel === 'scan'
-              ? 'bg-blue-600 text-white'
-              : 'bg-blue-200 text-white'
+              ? 'bg-blue-600 text-white hover:bg-blue-700'
+              : 'bg-blue-200 text-blue-800 hover:bg-blue-300'
           }`}
         >
           Escanear Documento

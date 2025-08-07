@@ -10,6 +10,12 @@ export default function ScannerSettings({ onFileChange }) {
   const [error, setError] = useState(null)
   const [scanError, setScanError] = useState(null)
 
+  // Mapeo de nombres “raw” a friendly
+  const friendlyNames = {
+    'PaperStream IP fi-7160':       'Escáner Fujitsu',
+    'TypeGeneric Network Scanner':  'Impresora Ricoh',
+  }
+
   // 1️⃣ Consultar lista de escáners
   const handleFetch = async () => {
     setLoading(true)
@@ -97,7 +103,7 @@ export default function ScannerSettings({ onFileChange }) {
               <option value="">Selecciona un escáner</option>
               {scanners.map(scanner => (
                 <option key={scanner.id} value={scanner.id}>
-                  {scanner.name}
+                  { friendlyNames[scanner.name] || scanner.name }
                 </option>
               ))}
             </select>
@@ -128,9 +134,9 @@ export default function ScannerSettings({ onFileChange }) {
               onChange={e => setPixelType(e.target.value)}
               className="w-full bg-gray-200 rounded-md px-4 py-2"
             >
-              <option value="BW">BW</option>
-              <option value="GREY">GREY</option>
-              <option value="COLOR">COLOR</option>
+              <option value="BW">Blanco/Negro</option>
+              <option value="GRAY">Escala de Grises</option>
+              <option value="COLOR">Color</option>
             </select>
           </div>
 

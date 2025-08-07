@@ -14,6 +14,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { UserProvider } from "./context/UsersContext";
 import Navbar from "./components/Navbar";
 import { useAuth } from "./context/AuthContext";
+import CargaDocsPageRefactNoAttributes from './pages/CargaDocsPage-Refact-NoAttributes';
 
 function App() {
   const { user, isAuthenticated, loading } = useAuth();
@@ -45,6 +46,7 @@ function App() {
             <Route path="/test" element={<TestPage />} />
             <Route path="/cargaDocs" element={<CargaDocsPage />} />
             <Route path="/twainBridge" element={<CargaDocsPageRefact />} />  {/* ← nueva ruta */}
+            <Route path="/twainBridgeNoAtt" element={<CargaDocsPageRefactNoAttributes  />} />
           </Route>
         </Routes>
       </BrowserRouter>

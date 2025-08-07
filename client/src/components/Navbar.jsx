@@ -48,6 +48,7 @@ export default function Navbar() {
     const common = [
       { to: '/cargaDocs',     label: 'Captura' },
       { to: '/twainBridge',   label: 'Twain' },
+      {to:'/twainBridgeNoAtt', label:'Twain 2'},
       { to: '/profile',       label: 'Perfil' },
     ]
     const adminExtras = user.Admin === 1
@@ -98,7 +99,8 @@ export default function Navbar() {
       <ul className={`
           absolute lg:static left-0 w-full lg:w-auto
           bg-zinc-700 lg:bg-transparent
-          flex flex-col lg:flex-row gap-2 lg:gap-x-2
+          flex flex-col lg:flex-row items-center   /* ← aquí */
+          gap-2 lg:gap-x-2
           ${isOpen ? 'block' : 'hidden'} lg:flex
         `}>
         {items.map((item, idx) => (
