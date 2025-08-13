@@ -1,10 +1,15 @@
 // src/app.js
 import express from "express";
 import morgan from "morgan";
+
+//rutas
 import authRoutes from "./routes/auth.routes.js";
 import users from "./routes/users.routes.js";
 import procesing from "./routes/procesing.routes.js";
 import procesingNoAttsRouter from "./routes/procesingNoAtts.routes.js";
+import categoriesRoutes from './routes/categories.routes.js'
+
+//otros
 import cookieParser from "cookie-parser";
 import cors from 'cors';
 import fileUpload from 'express-fileupload';
@@ -33,6 +38,7 @@ app.use("/api", authRoutes);
 app.use("/api", users);
 app.use("/api", procesing);
 app.use("/api", procesingNoAttsRouter);
+app.use("/api", categoriesRoutes);
 
 // Middleware para obtener IP del cliente
 app.use(requestIp.mw());

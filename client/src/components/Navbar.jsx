@@ -48,8 +48,9 @@ export default function Navbar() {
     const common = [
       { to: '/cargaDocs',     label: 'Captura' },
       { to: '/twainBridge',   label: 'Twain' },
-      {to:'/twainBridgeNoAtt', label:'Twain 2'},
+      { to: '/twainBridgeNoAtt', label:'Twain 2'},
       { to: '/profile',       label: 'Perfil' },
+      { to: '/generador-separadores', label: 'Generador de Separadores' },
     ]
     const adminExtras = user.Admin === 1
       ? [

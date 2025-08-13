@@ -1,6 +1,8 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//rutas
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import UserPage from "./pages/UserPage";
@@ -10,7 +12,10 @@ import HomePage from "./pages/HomePage";
 import TestPage from "./pages/TestPage";
 import CargaDocsPage from "./pages/CargaDocsPage";
 import CargaDocsPageRefact from "./pages/CargaDocsPage-Refact";  // ← import de la versión refactor
+import GeneradorSeparadores from './pages/GeneradorSeparadores';
+
 import ProtectedRoute from "./ProtectedRoute";
+
 import { UserProvider } from "./context/UsersContext";
 import Navbar from "./components/Navbar";
 import { useAuth } from "./context/AuthContext";
@@ -47,6 +52,7 @@ function App() {
             <Route path="/cargaDocs" element={<CargaDocsPage />} />
             <Route path="/twainBridge" element={<CargaDocsPageRefact />} />  {/* ← nueva ruta */}
             <Route path="/twainBridgeNoAtt" element={<CargaDocsPageRefactNoAttributes  />} />
+            <Route path="/generador-separadores" element={<GeneradorSeparadores />} />
           </Route>
         </Routes>
       </BrowserRouter>
